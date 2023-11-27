@@ -1,4 +1,4 @@
-public class Student {
+public class Instructor {
     String firstName;
     String lastName;
     String email;
@@ -8,7 +8,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Ученик " +
+        return "Инструктор " +
                 firstName + " " + lastName +
                 ", email: " + email +
                 ", пароль: " + password +

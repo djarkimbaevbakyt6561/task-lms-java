@@ -5,6 +5,7 @@ public class Management {
     User[] users = new User[]{new User("Bolot", "Sultanich", "admin@gmail.com", "admin123", "0707109090", "male", Roles.ADMIN)};
     Student[] allStudents = new Student[0];
     Lesson[] allLessons = new Lesson[0];
+    Instructor[] allInstructors = new Instructor[0];
     public void addUser(User registerUser) {
         User[] newArray = Arrays.copyOf(users, users.length + 1);
         newArray[newArray.length - 1] = registerUser;
@@ -20,7 +21,11 @@ public class Management {
         newArray[newArray.length - 1] = student;
         allStudents = newArray;
     }
-
+    public void addInstructor(Instructor instructor) {
+        Instructor[] newArray = Arrays.copyOf(allInstructors, allInstructors.length + 1);
+        newArray[newArray.length - 1] = instructor;
+        allInstructors = newArray;
+    }
     public void addGroup(Group group) {
         Group[] newArray = Arrays.copyOf(groups, groups.length + 1);
         newArray[newArray.length - 1] = group;
@@ -37,6 +42,19 @@ public class Management {
         }
 
         groups = Arrays.copyOf(newGroups, groups.length - 1);
+    }
+
+    public void deleteInstructor(String email) {
+        Instructor[] instructors = new Instructor[10000];
+        int newIndex = 0;
+
+        for (Instructor instructor1 : instructors) {
+            if (instructor1 != null && !(instructor1.email.equals(email))) {
+                instructors[newIndex++] = instructor1;
+            }
+        }
+
+        allInstructors = Arrays.copyOf(instructors, instructors.length - 1);
     }
     public void deleteUser(String email) {
         User[] newUsers = new User[10000];

@@ -5,6 +5,6 @@ public class Lesson {
     @Override
     public String toString() {
         return "Урок " + lessonName +
-                ", Описание задачи" + taskDescription;
+                ", oписание задачи: " + taskDescription;
     }
 }
